@@ -11,8 +11,9 @@ COPY dbconfig.json dbconfig.json
 RUN npm install
 #DEFAULT PORT 3000
 
-#USER 1000
 ADD https://github.com/chartjs/Chart.js/releases/download/v2.3.0/Chart.js .
+RUN chmod 755 Chart.js
+USER 1000
 
 CMD ["node","simplestapp.js","3000"]
 EXPOSE 3000

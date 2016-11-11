@@ -16,7 +16,7 @@ push:
 	docker push hopla/mentorsday-lab:simplestdb
 
 scale:
-	docker-compose -f simplest-demo.yml -p demo scale app=5
+	docker-compose -f mentorsday.yml -p demo scale app=5
 
 hits:
 	while :;do curl -s http://0.0.0.0:8080 >/dev/null;sleep 2;done

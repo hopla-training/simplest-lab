@@ -1,10 +1,15 @@
+
+	docker-compose -f mentorsday-lab.yml -p demo up -d 
+	
 	docker-compose -f mentorsday-lab.yml -p demo stop
 
-	docker-compose -f mentorsday-lab.yml -p demo rm -f
+	docker-compose -f mentorsday-lab.yml -p demo down
 
 
 Configured Services for the Demo Environment
-	
+
+
+
 networks:
   simplestdemo: {}
 services:

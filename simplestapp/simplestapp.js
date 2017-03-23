@@ -25,6 +25,31 @@ const conString = 'postgres://' + dbuser + ':' + dbpasswd + '@' + dbhost + ':'+ 
 
 http.createServer(function (req, res) {
   if (req.url == "/favicon.ico"){return;}
+  if (req.url == "/reset"){
+
+    pg.connect(conString, function (err, client, done) {
+
+      if (err) {
+        return console.error('error fetching client from pool', err)
+      }
+
+      var truncate='TRUNCATE hits';
+
+      console.log(truncate);
+        client.query(truncate, function (err, result) {
+            done()
+
+            if (err) {
+              return console.error('error happened during query', err)
+		}
+
+	})
+    })
+    res.redirect('/');
+    return;
+   }
+
+
   if (req.url == "/Chart.js") {
       res.writeHead(200, {'Content-Type': 'application/javascript'});
       fs.createReadStream('./Chart.js').pipe(res);
@@ -124,32 +149,6 @@ http.createServer(function (req, res) {
 
             console.log(serverips);
             console.log(serverhits);
-
-
-            // var pgpoolq='show pool_nodes;';
-            //
-            // console.log(pgpoolq);
-            //
-            // client.query(pgpoolq, function (err, qresult) {
-            //   console.log(">> "+ JSON.stringify(qresult.rows));
-            //   if (err) {
-            //     return console.error('error happened during query', err)
-            //   }
-            //   console.log(qresult.rows[0])
-            //
-            //   var dbpoolserver=""
-            //
-            //   var status="ERROR"
-            //
-            //   dbpool="<li>"+dbpool+"</li>" //Prepare for printing
-            //
-            //   for(var i = 0; i < Object.keys(qresult.rows).length ; i++) {
-            //     if (qresult.rows[i].status == 2){status="OK";}
-            //     console.log(qresult.rows[i].hostname+":"+qresult.rows[i].port+" - "+status+" - "+qresult.rows[i].role);
-            //     dbpoolserver=dbpoolserver+"<li>"+qresult.rows[i].hostname+":"+qresult.rows[i].port+" - "+status+" - "+qresult.rows[i].role+"</li>";
-            //   }
-            //     dbpool=dbpoolserver;
-            //})
 
 
             fs.readFile('simplestapp.html', 'utf-8', function (err, data) {

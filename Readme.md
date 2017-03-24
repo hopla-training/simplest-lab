@@ -46,12 +46,14 @@ or
 
 ~~~
 
-This will build all required images for this lab.
+Laboratory images are:
+
 - hopla/simplest-lab:simplestlb --> Loadbalancer used as application frontend. It will listen on port 8080 so we could use [http://localhost:8080](http://localhost:8080) as application endpoint, using only one host or even using a swarm envroment, thanks to __"routing mesh"__. Everytime we request this frontend page, NGINX will query DNS will asking for new DNS entries acting as application backend (forced DNS Round Robin, instead of Docker built-in DNSRR).
 
 - hopla/simplest-lab:simplestdb --> Database for storing backend hits data. We should use persistent volumes (we can use __'docker storage plugins'__ to ensure data across swarm hosts).
 
 - hopla/simplest-lab:simplestapp --> Nodejs application that will act as backend. Everytime a request gets each backend, an insert will be send to database with its own IP. This way backend IPs will populate database and each new request will grow up its number of hits.
+
 
 * * *
 
@@ -64,6 +66,14 @@ This will build all required images for this lab.
     hopla/simplest-lab
 
 ~~~
+
+* * * 
+__NOTE:__
+TPrevious steps will __build all required images for this lab on one node__. To deploy this lab on swarm cluster with N-nodes you have 3 alternatives:
+ - Deploy your own registry and push your images with new tagging there. Remember to change deploy yaml files with these changes.
+ - Build these images, create new tags with your username and push them to your Dockerhub account. Remember to change deploy yaml files with these changes.
+ - Download source code repository on all your nodes and build images on each one.
+ - __Use provided yaml files with image repositories from hoplasoftware on Dockerhub. These is the recommened method for this Lab but you have learned how to build images using docker-compose (you can push them too ;).__
 
 * * *
 

@@ -6,6 +6,7 @@ WORKDIR ${APPDIR}
 
 COPY simplestapp.js simplestapp.js
 COPY simplestapp.html simplestapp.html
+COPY reset.html reset.html
 COPY package.json package.json
 COPY dbconfig.json dbconfig.json
 RUN npm install

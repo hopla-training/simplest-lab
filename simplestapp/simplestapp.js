@@ -45,6 +45,13 @@ http.createServer(function (req, res) {
 
 	    })
     })
+    fs.readFile('reset.html', 'utf-8', function (err, page) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=UTF-8' });
+      res.write(page);
+      res.end();
+    });
+    return;
+    
    }
 
 

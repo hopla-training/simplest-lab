@@ -399,5 +399,26 @@ ___FINAL NOTES:___
     - Play with number of out-of-box replicas for application backend service.
 - Play with database service (postgreSQL) using named volumes.
     - You can play with RexRay on Virtualbox to ensure a better storage backend on swarm cluster ;)
+- You can use [Visualizer](https://github.com/ManoMarks/docker-swarm-visualizer) for graphic reviewing of deployments on swarm or local host (swarm mode).
 
+~~~
+
+    $ docker run -it -d -p 5000:8080 -v /var/run/docker.sock:/var/run/docker.sock manomarks/visualizer
+
+~~~
+or
+~~~
+
+    $ docker service create \
+  --name=viz \
+  --publish=5000:8080/tcp \
+  --constraint=node.role==manager \
+  --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+  manomarks/visualizer
+~~~
+or just deploy swarm-visualizer.V3.yml version 3 docker-compose file.
+
+~~~
+    $docker stack deploy -c swarm-visualizer.V3.yml visualizer
+~~~ 
 * * *

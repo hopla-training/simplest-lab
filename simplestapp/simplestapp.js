@@ -41,12 +41,10 @@ http.createServer(function (req, res) {
 
             if (err) {
               return console.error('error happened during query', err)
-		}
+		        }
 
-	})
+	    })
     })
-    res.redirect('/');
-    return;
    }
 
 

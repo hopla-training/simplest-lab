@@ -41,6 +41,9 @@ services:
     depends_on:
       - lb
       - db
+    deploy:
+      #mode: global
+      replicas: 10
 
 networks:
   simplestlab:

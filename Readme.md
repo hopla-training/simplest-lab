@@ -4,7 +4,7 @@
 
 
 * * *
-__NOTES:__
+___NOTES:___
 - __This lab doesn't use secrets for password management__. It's quite easy add this feature, you will have to modify database service and application backend because nginx load balancer isn't using any password or authentication. Notice that you should change postgreSQL 'hits' database creation script.
 
 * * *
@@ -388,3 +388,14 @@ NAME  SERVICES
 
 ~~~
 
+* * *
+
+___FINAL NOTES:___
+- What about __'secrets'__?.
+- Notice __'deploy'__ reserved word in docker-compose file.
+    - We can change to __'global'__ mode application backend and see what happens ;)
+    - Play with number of out-of-box replicas for application backend service.
+- Play with database service (postgreSQL) using named volumes.
+    - You can play with RexRay on Virtualbox to ensure a better storage backend on swarm cluster ;)
+
+* * *

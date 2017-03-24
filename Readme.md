@@ -3,6 +3,12 @@
 ## This Lab will guide you to create a simple multi-service application using docker-compose and docker stacks.
 
 
+* * *
+__NOTES:__
+- __This lab doesn't use secrets for password management__. It's quite easy add this feature, you will have to modify database service and application backend because nginx load balancer isn't using any password or authentication. Notice that you should change postgreSQL 'hits' database creation script.
+
+* * *
+
 1. First be sure that you have docker engine >=1.13 (17.03) and docker-compose >=1.11
 
 * * *

@@ -150,6 +150,8 @@ hq3gxnrowy5x  lab_app.1  hopla/simplest-lab:simplestapp  hopla1  Running        
 
 9. Let's take a look around lab environment
 
+![Sample1](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample1.png)
+
 * * *
 
 10. Scale up application backend !!
@@ -210,7 +212,8 @@ xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
 * * *
 
 11. Review Lab Environment
-![Sample1](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample1.png)
+
+![Sample2](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample2.png)
 
 * * *
 
@@ -260,7 +263,7 @@ xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
 * * *
 
 13. Review Lab Environment
-![Sample2](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample2.png)
+
 
 * * *
 

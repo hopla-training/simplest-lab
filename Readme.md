@@ -1,4 +1,6 @@
 # Simplest Application Lab from HoplaSoftware
+### [@frjaraur](https://github.com/frjaraur)
+### [@hoplasoftware](https://github.com/hopla-training)
 
 ## This Lab will guide you to create a simple multi-service application using docker-compose and docker stacks.
 

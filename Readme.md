@@ -210,6 +210,7 @@ xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
 * * *
 
 11. Review Lab Environment
+![Sample1](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample1.png)
 
 * * *
 
@@ -259,6 +260,7 @@ xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
 * * *
 
 13. Review Lab Environment
+![Sample2](https://github.com/hopla-training/simplest-lab/raw/master/pictures/sample2.png)
 
 * * *
 

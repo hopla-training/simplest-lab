@@ -7,6 +7,7 @@
 
 * * *
 ___NOTES:___
+- __Notice that using docker-compose will actually deploy application components just to one node (the one used for deployment). This issue is quite importat and you should use 'docker stack deploy' if deploying to swarm cluster.__
 - __This lab doesn't use secrets for password management__. It's quite easy add this feature, you will have to modify database service and application backend because nginx load balancer isn't using any password or authentication. Notice that you should change postgreSQL 'hits' database creation script.
 
 - __If you are using a preconfigured Swarm Environment (using Azure, AWS, Vagrant, etc...), there are some quick notes about Swarm Cluster [here](https://github.com/hopla-training/simplest-lab/blob/master/Swarm.md).

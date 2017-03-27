@@ -211,6 +211,8 @@ lab_lb_1     /entrypoint.sh /bin/sh -c  ...   Up      0.0.0.0:8080->80/tcp
 
 - Using docker stack
 
+~~~
+
 $ docker service ls
 ID            NAME     MODE        REPLICAS  IMAGE
 e2wxwmt2brcl  lab_lb   replicated  1/1       hopla/simplest-lab:simplestlb
@@ -226,6 +228,8 @@ ID            NAME     MODE        REPLICAS  IMAGE
 e2wxwmt2brcl  lab_lb   replicated  1/1       hopla/simplest-lab:simplestlb
 w9i5rwrb1xde  lab_app  replicated  10/10     hopla/simplest-lab:simplestapp
 xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
+
+~~~
 
 
 * * *

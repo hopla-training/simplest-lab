@@ -324,8 +324,7 @@ lab_lb_1    /entrypoint.sh /bin/sh -c  ...   Up         0.0.0.0:8080->80/tcp
 As shown in this example resilience using docker-compose in a non-swarmed environment is different and worse. We must specify what to do in case of failure.
 
 
-- Using docker stacks
-On one of the hosts we will kill one task/container
+- Using docker stacks: On one of the hosts we will kill one task/container
 
 ~~~
 

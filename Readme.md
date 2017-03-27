@@ -212,6 +212,8 @@ lab_lb_1     /entrypoint.sh /bin/sh -c  ...   Up      0.0.0.0:8080->80/tcp
 
 - Using docker stack
 
+~~~
+
 $ docker service ls
 ID            NAME     MODE        REPLICAS  IMAGE
 e2wxwmt2brcl  lab_lb   replicated  1/1       hopla/simplest-lab:simplestlb
@@ -227,6 +229,8 @@ ID            NAME     MODE        REPLICAS  IMAGE
 e2wxwmt2brcl  lab_lb   replicated  1/1       hopla/simplest-lab:simplestlb
 w9i5rwrb1xde  lab_app  replicated  10/10     hopla/simplest-lab:simplestapp
 xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
+
+~~~
 
 
 * * *
@@ -321,10 +325,10 @@ lab_lb_1    /entrypoint.sh /bin/sh -c  ...   Up         0.0.0.0:8080->80/tcp
 As shown in this example resilience using docker-compose in a non-swarmed environment is different and worse. We must specify what to do in case of failure.
 
 
-- Using docker stacks
+- Using docker stacks: On one of the hosts we will kill one task/container
 
 ~~~
-On one of the hosts we will kill one task/container
+
 $ docker ps
 CONTAINER ID        IMAGE                            COMMAND                  CREATED             STATUS              PORTS               NAMES
 820e2b3b3330        hopla/simplest-lab:simplestapp   "node simplestapp...."   About an hour ago   Up About an hour    3000/tcp            lab_app.6.sn4mlb79calm86efwg7bxixoc
@@ -342,7 +346,14 @@ e2wxwmt2brcl  lab_lb   replicated  1/1       hopla/simplest-lab:simplestlb
 w9i5rwrb1xde  lab_app  replicated  3/4       hopla/simplest-lab:simplestapp
 xonw8tpdkpv3  lab_db   replicated  1/1       hopla/simplest-lab:simplestdb
 
+
+~~~
+
+
 But some seconds after, if we review stack services we notice that service status is recovered, with the previously defined number of instances.
+
+
+~~~
 
 $ docker service ls
 ID            NAME     MODE        REPLICAS  IMAGE
